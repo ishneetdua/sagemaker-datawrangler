@@ -1,9 +1,9 @@
 
 
-# Amazon SageMaker Data Wrangler time series workshop
+# Amazon SageMaker Data Wrangler time series example
 
 Our business goal: predict the number of NY City yellow taxi pickups in the next 24 hour for each pickup zones per hour and provide some insights for a drivers like average tips, average distance, etc.
-First and important step to achive our goal is a data preparation. This workshop will be focused on this step. 
+First and important step to achive our goal is a data preparation. This example will be focused on this step. 
 
 Data used in this demo notebook:
 - Original data source for all open data from 2008-now: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
@@ -142,7 +142,7 @@ Our data already in S3, let's import it by clicking "Amazon S3" button.
 print(f'S3 bucket name with data: {bucket_name}')
 ```
 
-You will see all your S3 buckets and if you want you could manually select a bucket which we created at the begining of the workshop. 
+You will see all your S3 buckets and if you want you could manually select a bucket which we created at the begining of the example. 
 
 ![EntireS3](./pictures/EntireS3.png)
 
@@ -625,7 +625,7 @@ df.describe().apply(lambda s: s.apply('{0:.5f}'.format))
 
 Statistics also looks good. Maximum numbers might be a little bit high, but we could fix it by adjusting "Standard deviations" value in "Handling outliers" step. You could build several models with different values and select which one will produce more accurate model. 
 
-Congratulations! At this stage you have designed a workflow and sucesfully launched it. Of course it is not  mandatory to always run a job by clicking on a "Run" button and you could automate it, but this is a topic of another workshop in this serires. 
+Congratulations! At this stage you have designed a workflow and sucesfully launched it. Of course it is not  mandatory to always run a job by clicking on a "Run" button and you could automate it, but this is a topic of another example in this serires. 
 
 
 <div class="alert alert-info"> 💡

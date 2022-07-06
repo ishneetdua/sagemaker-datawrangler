@@ -146,3 +146,9 @@ The below figure shows the results of the newly run Quick Model created using th
 Craete a quick model, similar to one we created in the Data Exploration step. 
 
 ![post-quick-model](./img/quick-model-post.png)
+
+
+
+### Next Steps
+
+As a next step, we will explore the data that we uploaded. Please refer to **[Readme](./Readme.md)** and follow steps for Data exploration.

@@ -26,6 +26,7 @@ You can add the following analysis to a dataframe:
 
 
 Following sections showcase few of the analysis techniques for the Hotel-bookings data.
+
 ### Get Insights
 
 You can get the Data Insights report by selecting Get Insights option for the Data Types box as shown in the figure.  

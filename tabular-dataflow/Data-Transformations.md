@@ -151,4 +151,4 @@ Craete a quick model, similar to one we created in the Data Exploration step.
 
 ### Next Steps
 
-As a next step, we will explore the data that we uploaded. Please refer to **[Readme](./Readme.md)** and follow steps for Data exploration.
+As a next step, we will explore the data that we uploaded. Please refer to **[Readme](./README.md)** and follow steps for Data exploration.

@@ -7,6 +7,7 @@ Amazon SageMaker Data Wrangler provides numerous ML data transforms to streamlin
 Data Wrangler includes built-in transforms, which you can use to transform columns without any code. You can also add custom transformations using PySpark, Pandas, and PySpark SQL. Some transforms operate in place, while others create a new output column in your dataset.
 
 In order to apply an action on the imported data, select the **Add Transform** option on right clicking the the **Data Types** block. In the displayed window, select **Add Steps** to display **Add Transform** window.
+
  ![add-transform](./img/add-transform.png)
 
 
@@ -22,7 +23,7 @@ In order to apply an action on the imported data, select the **Add Transform** o
 
 - based on non-linear correlation results: drop `reservation_status`. This column was already marked to be dropped based on Target leakage analysis. 
  
- we can drop all these columns in one go. To drop columns, we can choose the **Drop column** option from **Manage Columns** transform and pick the column names we want to drop as shown in the image below.
+ we can drop all these columns in one go. To drop columns, choose **Manage Columns** transform from the **Add Transform** window.  Then select the **Drop column** option from **Manage Columns** transform and pick the column names we want to drop as shown in the image below.
  
  
  ![drop-columns](./img/drop-columns.png)

@@ -56,39 +56,48 @@ An outlier can cause serious problems in statistical analysis. Machine learning 
 To handle outliers, choose **Handle outliers** transform from the **Add Transform** window.  
 Please select the following parameters and hit **Preview**.  
 
-`Transform`: `Standard deviation numeric outliers`
-`Fix method` : `Remove`
-`Standard deviations`: `4` 
-`Input columns`:  `lead_time`,`stays_in_weekend_nights`, `stays_in_weekday_nights`, `is_repeated_guest`, `prev_cancellations`,  `prev_bookings_not_canceled`, `booking_changes`, `adr`, `total_of_specical_requests`, `required_car_parking_spaces`,
+- `Transform`: `Standard deviation numeric outliers`
+- `Fix method` : `Remove`
+- `Standard deviations`: `4` 
+- `Input columns`:  `lead_time`,`stays_in_weekend_nights`, `stays_in_weekday_nights`, `is_repeated_guest`, `prev_cancellations`,  `prev_bookings_not_canceled`, `booking_changes`, `adr`, `total_of_specical_requests`, `required_car_parking_spaces`,
     
 
 
-![outliers](./img/outliers.png)
+![outliers](./img/handle-outliers.png)
 
 
-
+ If the Preview is OK, click **Add** to add the transform in the data flow. 
+ 
 
 ### Handle Missing Values 
-We can do the following to handle missing values in our feature columns using Data Wrangler. 
+To handle outliers, choose **Handle missing values** transform from the **Add Transform** window.  We can do the following to handle missing values in our feature columns using Data Wrangler. 
+
 
  - Missing values in **Children** column : Majority of the visitors were not accompanied by children and hence missing data can be replaced by number of children = 0.
  
 ![fill-missing-children](./img/fill-missing-children.png)
+
+ Please hit **Preview** to look at the transform preview, and if it is OK, click **Add** to add the transform in the data flow. 
  
 - Missing values in **Country** column 
 Iterating through the country column reveals that most of the clients are from Europe. Therefore, all the missing values in the country column are replaced with the country of maximum occurrence - Portugal (PRT). Fill missing country column with `PRT` based on value counts 
  
 ![fill-missing-country](./img/fill-missing-country.png)
 
+Please hit **Preview** to look at the transform preview, and if it is OK, click **Add** to add the transform in the data flow. 
 
-- Custom Transform - Meal type has Undefined category, changing the Undefined value to the most used which is BB by implementing a custom pyspark transform with two simple lines of code
+- Custom Transform - Meal type has Undefined category, changing the Undefined value to the most used which is BB by implementing a custom pyspark transform with two simple lines of code. This can be done by choosing **Custom transform** transform from the **Add Transform** window. Specify the name of the transform, and paste following code in the transform as shown in figure below. 
  
  ![custom-pyspark](./img/custom-pyspark.png)
+ 
+ 
 ```python
 from pyspark.sql.functions import when
 
 df = df.withColumn('meal', when(df.meal == 'Undefined', 'BB').otherwise(df.meal))
 ```
+
+Please hit **Preview** to look at the transform preview, and if it is OK, click **Add** to add the transform in the data flow. 
 
  ### Numeric Normalization 
 Normalization is a scaling technique in which values are shifted and rescaled so that they end up ranging between 0 and 1. It is also known as Min-Max scaling. Standardization is another scaling technique where the values are centered around the mean with a unit standard deviation. This means that the mean of the attribute becomes zero and the resultant distribution has a unit standard deviation.

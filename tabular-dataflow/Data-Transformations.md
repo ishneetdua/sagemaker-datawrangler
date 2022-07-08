@@ -113,7 +113,7 @@ From Data Wrangler's list of pre-built transforms, choose **Process numeric**. P
 - `Input columns`:  `lead_time`,`stays_in_weekend_nights`, `stays_in_weekday_nights`, `is_repeated_guest`, `prev_cancellations`,  `prev_bookings_not_canceled`, `booking_changes`, `adr`, `total_of_specical_requests`, `required_car_parking_spaces`
     
 
- ![scale-numeric](./img/scale-numeric.png)
+ ![scale-numeric](./img/min-max.png)
 
 
  If the Preview is OK, click **Add** to add the transform in the data flow. 

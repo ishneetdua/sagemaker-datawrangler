@@ -23,26 +23,37 @@ In order to apply an action on the imported data, select the **Add Transform** o
 
 - based on non-linear correlation results: drop `reservation_status`. This column was already marked to be dropped based on Target leakage analysis. 
  
- we can drop all these columns in one go. To drop columns, choose **Manage Columns** transform from the **Add Transform** window.  Then select the **Drop column** option from **Manage Columns** transform and pick the column names we want to drop as shown in the image below.
+ we can drop all these columns in one go. To drop columns, choose **Manage columns** transform from the **Add Transform** window.  Then select the **Drop column** option from **Manage columns** transform. 
+ 
+Please select the the column names we want to drop as shown in the image below and hit **Preview**.  
  
  
  ![drop-columns](./img/drop-columns.png)
  
-Further, based on the multi-colinearity analysis results, we can also drop the columns `adults` and `agent` for whom the variance inflation factor scores are greater than 5.
+If the Preview is OK, click **Add** to add the transform in the data flow. 
+
+Further, based on the multi-colinearity analysis results, we can also drop the columns `adults` and `agent` for whom the variance inflation factor scores are greater than 5. Please select the the column names we want to drop and hit **Preview**.  
+
 
 
  ![drop-more-columns](./img/drop-more-cols.png)
+ 
+ If the Preview is OK, click **Add** to add the transform in the data flow. 
+
 
 ### Drop Duplicate Rows
-To drop the duplicate rows that we identified based on the analysis we did in the previous section. Choose **Drop duplicates** transform from the list of transforms available in Data Wrangler as shown in the figure below.
+To drop the duplicate rows that we identified based on the analysis we did in the previous section. To drop columns, choose **Manage rows** transform from the **Add Transform** window.  Then select the **Drop duplicates** option from **Manage rows** transform and hit **Preview**.  
+
 
  ![drop-duplicates](./img/drop-duplicates.png)
 
- 
+  If the Preview is OK, click **Add** to add the transform in the data flow. 
+
  
 ### Handle Outliers 
 An outlier can cause serious problems in statistical analysis. Machine learning models are sensitive to the distribution and range of feature values. Outliers, or rare values, can negatively impact model accuracy and lead to longer training times. When you define a Handle outliers transform step, the statistics used to detect outliers are generated on the data available in Data Wrangler when defining this step. These same statistics are used when running a Data Wrangler job.
 
+To handle outliers, choose **Handle outliers** transform from the **Add Transform** window.  
  ![outliers](./img/outliers.png)
 
 

@@ -31,8 +31,8 @@ You can get the Data Insights report by selecting **Get Insights** option for th
 ![image](./img/get-insights.png)
 
 Please select the following parameters and hit **Create**.  
-`Target column`: `is-cancelled`
-`Problem type`: `Classification` 
+ - `Target column`: `is-cancelled`
+ - `Problem type`: `Classification` 
 
 After the report is generated, it outlines findings about statistics, duplicate rows, warnings, confusion matrix and feature summary. This can be a useful report before we start our detailed analysis. 
 
@@ -45,7 +45,7 @@ After the report is generated, it outlines findings about statistics, duplicate 
 Select **Table Summary** Analysis in the **Add Analysis** window.  
 
 Please select the following parameters and hit **Preview**.  
-`Analysis name`: `Table Summary`
+- `Analysis name`: `Table Summary`
 
 Overall details of the data for various columsn is displayed as depicted in figure below. 
 
@@ -69,10 +69,10 @@ The AUC - ROC curve provides a predictive metric, computed individually for each
 
 To create a target leakage analysis, Select **Target Leakage** Analysis in the **Add Analysis** window. 
 Please select the following parameters and hit **Preview**.  
-`Analysis name`: `Target Leakage`
-`Max features` : `40`
-`Target column`: `is-cancelled` 
-`Problem type`: `Classification` 
+- `Analysis name`: `Target Leakage`
+- `Max features` : `40`
+- `Target column`: `is-cancelled` 
+- `Problem type`: `Classification` 
 
 
 ![image](./img/target-leakage-pre.png)
@@ -97,7 +97,7 @@ Linear feature correlation is based on Pearson's correlation. Numeric to categor
 
 Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correlation, 1 implies perfect correlation and -1 implies perfect inverse correlation. Numeric to categorical and categorical to categrical correlations are in the range [0, 1] where 0 implies no correlation and 1 implies perfect correlation. 
 To create the analysis, choose **Feature Correlation** for the Analysis type and choose **linear** for Correlation type. Please select the following parameters and hit **Preview**.  
-`Analysis name`: `Linear Correlation`
+- `Analysis name`: `Linear Correlation`
 
 This analysis will take a few minutes to complete. 
 
@@ -122,7 +122,8 @@ Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correl
 Features that are not either numeric or categorical are ignored.
 
 To create the analysis, choose **Feature Correlation** for the Analysis type and **non-linear** for Correlation type. Please select the following parameters and hit **Preview**.  
-`Analysis name`: `Non-Linear Correlation`
+- `Analysis name`: `Non-Linear Correlation`
+
 This analysis will take a few minutes to complete. 
 
 The table below lists for each feature what is the most correlated feature to it. You can see most of the top correlated feature pairs overlap with the previous two analyses.
@@ -174,10 +175,10 @@ Select **Save** to save the analysis.
 Lasso feature selection trains a linear classifier with L1 regularization (you can control the strength of L1 penalty by adjusting "L1 magnitude") that induces a sparse solution. The regressor provides a coefficient for each feature, and the absolute value of this coefficient could be interpreted as an importance score for that feature.
 
 To create the analysis for Lasso Feature Selection, choose **Multicollinearity** for Analysis type and choose **Lasso feature selection** for Analysis. Please select the following parameters and hit **Preview**.  
-`Analysis name`: `Non-Linear Correlation`
-`L1 Magnitude`: `1`
-`Problem Type`: `Classification`
-`Label Column` : `is_cancelled` 
+- `Analysis name`: `Non-Linear Correlation`
+- `L1 Magnitude`: `1`
+- `Problem Type`: `Classification`
+- `Label Column` : `is_cancelled` 
 
 This analysis will take a few minutes to complete. 
 
@@ -218,7 +219,8 @@ When you create a quick model chart, you select a dataset you want evaluated, an
 Let us create a prediction model on the fly for the problem for the booking cancellation problem using the raw crude features we started with in Data Wrangler's Quick Model option.
 
 Please choose **Quick Model** for Analysis type. Select the following parameters and hit **Preview**.  
-`Analysis name`: `Model pre-transform`
+- `Analysis name`: `Model pre-transform`
+
 This analysis will take a few minutes to complete. 
 
 ![quick-model-pre](./img/create-quick-model.png)

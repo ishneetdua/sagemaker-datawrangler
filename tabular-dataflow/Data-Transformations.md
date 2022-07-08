@@ -6,6 +6,11 @@ Amazon SageMaker Data Wrangler provides numerous ML data transforms to streamlin
 
 Data Wrangler includes built-in transforms, which you can use to transform columns without any code. You can also add custom transformations using PySpark, Pandas, and PySpark SQL. Some transforms operate in place, while others create a new output column in your dataset.
 
+In order to apply an action on the imported data, select the **Add Transform** option on right clicking the the **Data Types** block. In the displayed window, select **Add Steps** to display **Add Transform** window.
+ ![add-transform](./img/add-transform.png)
+
+
+
 ### Drop Columns 
  Now we will drop columns based on the analyses we performed in the previous section. 
 

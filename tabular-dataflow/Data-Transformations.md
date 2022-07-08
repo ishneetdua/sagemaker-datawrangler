@@ -54,7 +54,18 @@ To drop the duplicate rows that we identified based on the analysis we did in th
 An outlier can cause serious problems in statistical analysis. Machine learning models are sensitive to the distribution and range of feature values. Outliers, or rare values, can negatively impact model accuracy and lead to longer training times. When you define a Handle outliers transform step, the statistics used to detect outliers are generated on the data available in Data Wrangler when defining this step. These same statistics are used when running a Data Wrangler job.
 
 To handle outliers, choose **Handle outliers** transform from the **Add Transform** window.  
- ![outliers](./img/outliers.png)
+Please select the following parameters and hit **Preview**.  
+
+`Transform`: `Standard deviation numeric outliers`
+`Fix method` : `Remove`
+`Standard deviations`: `4` 
+`Input columns`:  `lead_time`,`stays_in_weekend_nights`, `stays_in_weekday_nights`, `is_repeated_guest`, `prev_cancellations`,  `prev_bookings_not_canceled`, `booking_changes`, `adr`, `total_of_specical_requests`, `required_car_parking_spaces`,
+    
+
+
+![outliers](./img/outliers.png)
+
+
 
 
 ### Handle Missing Values 
@@ -91,8 +102,8 @@ From Data Wrangler's list of pre-built transforms, choose **Process numeric** an
 We will need to apply this scaling to the following feature columns:
 
     lead_time
-    stays_weekend_nights
-    stays_weekend_nights
+    stays_in_weekend_nights
+    stays_in_weekday_nights
     is_repeated_guest
     prev_cancellations
     prev_bookings_not_canceled

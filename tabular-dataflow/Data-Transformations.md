@@ -184,7 +184,7 @@ The below figure shows the results of the newly run Quick Model created using th
     required_car_parking_spaces
     booking_changes
 
-Craete a quick model, similar to one we created in the **[Exploratory Data Analysis] (./Data-Exploration.md)** step. 
+Craete a quick model, similar to one we created in the **[Exploratory Data Analysis](./Data-Exploration.md)** step. 
 
 ![post-quick-model](./img/quick-model-post.png)
 

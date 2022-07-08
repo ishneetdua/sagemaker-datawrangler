@@ -137,7 +137,8 @@ Select **Save** to save the analysis.
 Variance Inflation Factor (VIF) is a measure of colinearity among variables. It is calculated by solving a regression problem to predict one variable given the rest. A VIF score is a positive number that is greater or equal than 1, and a score of 1 means the variable is completely independent of the others. The larger the score, the more dependent it is. Since it is an inverse, it is possible for the VIF score to be infinite. Note that we cap the VIF score at 50. As a rule of thumb for cases where the number of samples is not abnormally small, a score of up to 5 means the variable is only moderatly correlated, and beyond 5 it is highly correlated.
 
 To create the analysis for VIF, choose **Multicollinearity** for Analysis type and choose **Variance inflation factors** for Analysis. Please select the following parameters and hit **Preview**.  
-`Analysis name`: `Variance Inflation Factors`
+- `Analysis name`: `Variance Inflation Factors`
+
 This analysis will take a few minutes to complete. 
 
 As per the above rule, we can eliminate the following feature columns from our feature set since they will not contribute effectively towards the prediction capability of the model that gets trained using these features.
@@ -157,7 +158,8 @@ Select **Save** to save the analysis.
 Principal Component Analysis (PCA) measures the variance of the data along different directions in the feature space. The ordered list of variances, also known as the singular values, can inform about multicolinearity in our data. This list contains non-negative numbers. When the numbers are roughly uniform, the data has very few multicolinearities. However, when the opposite is true, the magnitude of the top values will dominate the rest. In order to avoid issues related to different scales, the individual features are standardized to have mean 0 and standard deviation 1 before applying PCA.
 
 To create the analysis for PCA, choose **Multicollinearity** for Analysis type and choose **Principal component analysis** for Analysis. Please select the following parameters and hit **Preview**.  
-`Analysis name`: `Principal Component Analysis`
+- `Analysis name`: `Principal Component Analysis`
+
 This analysis will take a few minutes to complete. 
 
 As per the above rule, it is evident the numbers (variances) are not uniform hence confirming that the data has multicolinearies to fix. This has already been confirmed by our previous analysis.

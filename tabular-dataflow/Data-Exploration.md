@@ -10,10 +10,6 @@ In order to apply an action on the imported data, select the **Add Analysis** op
 
 On selecting Add Analysis, the Analysis pane os shown, where you can choose the analysis you want to perform. 
 
-![image](./img/histogram.png)
-
-
-
 All analyses are generated using 100,000 rows of your dataset.
 
 You can add the following analysis to a dataframe:
@@ -29,9 +25,14 @@ Following sections showcase few of the analysis techniques for the Hotel-booking
 
 ### Get Insights
 
-You can get the Data Insights report by selecting Get Insights option for the Data Types box as shown in the figure.  
+You can get the Data Insights report by selecting **Get Insights** option for the **Data Types** block as shown in the figure. 
+
 
 ![image](./img/get-insights.png)
+
+Please select the following parameters and hit **Create**.  
+`Target column`: `is-cancelled`
+`Problem type`: `Classification` 
 
 After the report is generated, it outlines findings about statistics, duplicate rows, warnings, confusion matrix and feature summary. This can be a useful report before we start our detailed analysis. 
 
@@ -39,11 +40,19 @@ After the report is generated, it outlines findings about statistics, duplicate 
 
 
 
-### Table Information 
+### Table Summary 
 
-After selecting the Table informaiton analysis, overall details of the data for various columsn is displayed as depicted in figure below. 
+Select **Table Summary** Analysis in the **Add Analysis** window.  
+
+Please select the following parameters and hit **Preview**.  
+`Analysis name`: `Table Summary`
+
+Overall details of the data for various columsn is displayed as depicted in figure below. 
 
 ![image](./img/table-information.png)
+
+Select **Save** to save the analysis. 
+
 
 ### Target Leakage 
 
@@ -58,7 +67,14 @@ For classification, the target leakage analysis uses the area under the receiver
 
 The AUC - ROC curve provides a predictive metric, computed individually for each column using cross-validation, on a sample of up to around 1000 rows. A score of 1 indicates perfect predictive abilities, which often indicates target leakage. A score of 0.5 or lower indicates that the information on the column could not provide, on its own, any useful information towards predicting the target. Although it can happen that a column is uninformative on its own but is useful in predicting the target when used in tandem with other features, a low score could indicate the feature is redundant.
 
-To create a target leakage analysis, use the following configuration (as shown in the figure below). 
+To create a target leakage analysis, Select **Target Leakage** Analysis in the **Add Analysis** window. 
+Please select the following parameters and hit **Preview**.  
+`Analysis name`: `Target Leakage`
+`Max features` : `40`
+`Target column`: `is-cancelled` 
+`Problem type`: `Classification` 
+
+
 ![image](./img/target-leakage-pre.png)
 
 
@@ -68,6 +84,10 @@ The identified features can be fairly omitted as part of the transformations we 
 
 ![target-leakage](./img/target-leakage.png)
 
+Select **Save** to save the analysis. 
+
+
+
 
 Next, with SageMaker Data Wrangler’s feature correlation visualization you can easily calculate the correlation of features in your data set and visualize them as a correlation matrix. We will look into 2 types of feature correlations and how to use them on our example dataset in hand.
 
@@ -76,7 +96,10 @@ Next, with SageMaker Data Wrangler’s feature correlation visualization you can
 Linear feature correlation is based on Pearson's correlation. Numeric to categorical correlation is calculated by encoding the categorical features as the floating point numbers that best predict the numeric feature before calculating Pearson's correlation. Linear categorical to categorical correlation is not supported.
 
 Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correlation, 1 implies perfect correlation and -1 implies perfect inverse correlation. Numeric to categorical and categorical to categrical correlations are in the range [0, 1] where 0 implies no correlation and 1 implies perfect correlation. 
-To create the analysis, choose **Feature Correlation** for the Analysis type and choose **linear** for Correlation type. 
+To create the analysis, choose **Feature Correlation** for the Analysis type and choose **linear** for Correlation type. Please select the following parameters and hit **Preview**.  
+`Analysis name`: `Linear Correlation`
+
+This analysis will take a few minutes to complete. 
 
 Features that are not either numeric or categorical are ignored. The table below lists for each feature what is the most correlated feature to it. 
 
@@ -88,6 +111,7 @@ Based on the correlation values, we can see the top 6 feature pairs (as listed b
 
 P.S.: A limit of 100,000 rows is used for this analysis.
 
+Select **Save** to save the analysis.
 
 ### Feature Correlation (Non-Linear)
 
@@ -97,18 +121,23 @@ Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correl
 
 Features that are not either numeric or categorical are ignored.
 
-To create the analysis, choose **Feature Correlation** for the Analysis type and **non-linear** for Correlation type. 
+To create the analysis, choose **Feature Correlation** for the Analysis type and **non-linear** for Correlation type. Please select the following parameters and hit **Preview**.  
+`Analysis name`: `Non-Linear Correlation`
+This analysis will take a few minutes to complete. 
 
 The table below lists for each feature what is the most correlated feature to it. You can see most of the top correlated feature pairs overlap with the previous two analyses.
     
 ![non-linear-correlated](./img/non-linear-pre.png)
 
+Select **Save** to save the analysis.
 
 ### Multicolinearity (Variance Inflation Factors)
 
 Variance Inflation Factor (VIF) is a measure of colinearity among variables. It is calculated by solving a regression problem to predict one variable given the rest. A VIF score is a positive number that is greater or equal than 1, and a score of 1 means the variable is completely independent of the others. The larger the score, the more dependent it is. Since it is an inverse, it is possible for the VIF score to be infinite. Note that we cap the VIF score at 50. As a rule of thumb for cases where the number of samples is not abnormally small, a score of up to 5 means the variable is only moderatly correlated, and beyond 5 it is highly correlated.
 
-To create the analysis for VIF, choose **Multicollinearity** for Analysis type and choose **Variance inflation factors** for Analysis.
+To create the analysis for VIF, choose **Multicollinearity** for Analysis type and choose **Variance inflation factors** for Analysis. Please select the following parameters and hit **Preview**.  
+`Analysis name`: `Variance Inflation Factors`
+This analysis will take a few minutes to complete. 
 
 As per the above rule, we can eliminate the following feature columns from our feature set since they will not contribute effectively towards the prediction capability of the model that gets trained using these features.
 
@@ -119,12 +148,16 @@ As per the above rule, we can eliminate the following feature columns from our f
 
 ![variance-inflation-factors](./img/vif-pre.png)
 
+Select **Save** to save the analysis.
+
 
 ### Multicolinearity - Principal Component Analysis (PCA)
 
 Principal Component Analysis (PCA) measures the variance of the data along different directions in the feature space. The ordered list of variances, also known as the singular values, can inform about multicolinearity in our data. This list contains non-negative numbers. When the numbers are roughly uniform, the data has very few multicolinearities. However, when the opposite is true, the magnitude of the top values will dominate the rest. In order to avoid issues related to different scales, the individual features are standardized to have mean 0 and standard deviation 1 before applying PCA.
 
-To create the analysis for PCA, choose **Multicollinearity** for Analysis type and choose **Principal component analysis** for Analysis.
+To create the analysis for PCA, choose **Multicollinearity** for Analysis type and choose **Principal component analysis** for Analysis. Please select the following parameters and hit **Preview**.  
+`Analysis name`: `Principal Component Analysis`
+This analysis will take a few minutes to complete. 
 
 As per the above rule, it is evident the numbers (variances) are not uniform hence confirming that the data has multicolinearies to fix. This has already been confirmed by our previous analysis.
 
@@ -132,14 +165,21 @@ As per the above rule, it is evident the numbers (variances) are not uniform hen
 
 ![pca-pre](./img/pca-pre.png)
 
+Select **Save** to save the analysis.
+
 
 ### Multicolinearity Lasso Feature Selection 
 
 
 Lasso feature selection trains a linear classifier with L1 regularization (you can control the strength of L1 penalty by adjusting "L1 magnitude") that induces a sparse solution. The regressor provides a coefficient for each feature, and the absolute value of this coefficient could be interpreted as an importance score for that feature.
 
-To create the analysis for Lasso Feature Selection, choose **Multicollinearity** for Analysis type and choose **Lasso feature selection** for Analysis. Select following parameters for the analysis -  `L1 Magnitude`: `1`,  `Problem Type`: `Classification`, `Label Column` : `is_cancelled` 
+To create the analysis for Lasso Feature Selection, choose **Multicollinearity** for Analysis type and choose **Lasso feature selection** for Analysis. Please select the following parameters and hit **Preview**.  
+`Analysis name`: `Non-Linear Correlation`
+`L1 Magnitude`: `1`
+`Problem Type`: `Classification`
+`Label Column` : `is_cancelled` 
 
+This analysis will take a few minutes to complete. 
 
 
 The plot below provides features' importance scores (absolute coefficients) after training a classifier on a sample of the dataset (10k for large dataset). The training process includes a standardization of the features to have mean 0 and standard deviation 1 in order to avoid a skewed importance score due to different scales.
@@ -148,6 +188,9 @@ The classifier obtained a roc_auc score: `0.639269142214666`.
 
 ![lasso-pre](./img/lasso-pre.png)
 
+Select **Save** to save the analysis.
+
+
 
 ### Detect Duplicate Rows
 Next, with the new duplicate row detection visualization, you can quickly detect if your data set has any duplicate rows. To apply this analysis, choose **Duplicate rows** for Analysis type. 
@@ -155,6 +198,7 @@ Next, with the new duplicate row detection visualization, you can quickly detect
 From the figure bwlow, we can see almost ~33% of the rows in the dataset are duplicates.
 
 ![duplicate](./img/duplicate-rows.png)
+
 
 
 ### Quick Model
@@ -173,6 +217,10 @@ When you create a quick model chart, you select a dataset you want evaluated, an
 
 Let us create a prediction model on the fly for the problem for the booking cancellation problem using the raw crude features we started with in Data Wrangler's Quick Model option.
 
+Please choose **Quick Model** for Analysis type. Select the following parameters and hit **Preview**.  
+`Analysis name`: `Model pre-transform`
+This analysis will take a few minutes to complete. 
+
 ![quick-model-pre](./img/create-quick-model.png)
 
 A limit of 100,000 rows is used for this analysis. You can use the Quick Model feature to provide a rough estimate of the expected predicted quality and the predictive power of the features in your dataset. 
@@ -181,6 +229,8 @@ We can from the results below, Quick model was able to predict with an F1 score 
 
 
 ![quick-model-pre](./img/quick-model-pre.png)
+
+Select **Save** to save the model.
 
 ### Next Steps
 

@@ -75,20 +75,20 @@ To handle outliers, choose **Handle missing values** transform from the **Add Tr
 
  - Missing values in **Children** column : Majority of the visitors were not accompanied by children and hence missing data can be replaced by number of children = 0.
  
-![fill-missing-children](./img/fill-missing-children.png)
+![fill-missing-children](./img/fill-missing-children-val.png)
 
  Please hit **Preview** to look at the transform preview, and if it is OK, click **Add** to add the transform in the data flow. 
  
 - Missing values in **Country** column 
 Iterating through the country column reveals that most of the clients are from Europe. Therefore, all the missing values in the country column are replaced with the country of maximum occurrence - Portugal (PRT). Fill missing country column with `PRT` based on value counts 
  
-![fill-missing-country](./img/fill-missing-country.png)
+![fill-missing-country](./img/fill-missing-country-val.png)
 
 Please hit **Preview** to look at the transform preview, and if it is OK, click **Add** to add the transform in the data flow. 
 
 - Custom Transform - Meal type has Undefined category, changing the Undefined value to the most used which is BB by implementing a custom pyspark transform with two simple lines of code. This can be done by choosing **Custom transform** transform from the **Add Transform** window. Specify the name of the transform, and paste following code in the transform as shown in figure below. 
  
- ![custom-pyspark](./img/custom-pyspark.png)
+ ![custom-pyspark](./img/custom-pyspark-code.png)
  
  
 ```python
@@ -102,40 +102,41 @@ Please hit **Preview** to look at the transform preview, and if it is OK, click 
  ### Numeric Normalization 
 Normalization is a scaling technique in which values are shifted and rescaled so that they end up ranging between 0 and 1. It is also known as Min-Max scaling. Standardization is another scaling technique where the values are centered around the mean with a unit standard deviation. This means that the mean of the attribute becomes zero and the resultant distribution has a unit standard deviation.
  
-For our example use case, let's normalize the numeric feature columns to a standard scale [0,1]. scale-numeric
+For our example use case, let's normalize the numeric feature columns to a standard scale [0,1]. 
 
-From Data Wrangler's list of pre-built transforms, choose **Process numeric** and apply the **min-max scaler** between values 0 and 1 as shown above.
+From Data Wrangler's list of pre-built transforms, choose **Process numeric**. Please select the following parameters and hit **Preview**.  
+
+- `Transform`: `Scale values`
+- `Scalar` : `Min-max scalar`
+- `Min`: `0`
+- `Max`: `1`  
+- `Input columns`:  `lead_time`,`stays_in_weekend_nights`, `stays_in_weekday_nights`, `is_repeated_guest`, `prev_cancellations`,  `prev_bookings_not_canceled`, `booking_changes`, `adr`, `total_of_specical_requests`, `required_car_parking_spaces`
+    
 
  ![scale-numeric](./img/scale-numeric.png)
 
-We will need to apply this scaling to the following feature columns:
 
-    lead_time
-    stays_in_weekend_nights
-    stays_in_weekday_nights
-    is_repeated_guest
-    prev_cancellations
-    prev_bookings_not_canceled
-    booking_changes
-    adr
-    total_of_specical_requests
-    required_car_parking_spaces
-    
-    
+ If the Preview is OK, click **Add** to add the transform in the data flow. 
+ 
 ### Handle Categorical Data
 
-Categorical data is usually composed of a finite number of categories, where each category is represented with a string. Encoding categorical data is the process of creating a numerical representation for categories. With Data Wrangler, we can select Ordinal encode to encode categories into an integer between 0 and the total number of categories in the Input column you select. Select **One-hot encode** option from **Encode Categories Transform** to use one-hot encoding or use similarity encoding when you have the following:
+Categorical data is usually composed of a finite number of categories, where each category is represented with a string. Encoding categorical data is the process of creating a numerical representation for categories. With Data Wrangler, we can select Ordinal encode to encode categories into an integer between 0 and the total number of categories in the Input column you select. Select  one-hot encoding or use similarity encoding when you have a large number of categorical variables and Noisy data. 
 
-    - A large number of categorical variables
-    - Noisy data
 
-One-hot transform can be applied to our dataset as shown in the figure below.
+From Data Wrangler's list of pre-built transforms, choose **Encode Categorical**. Please select the following parameters and hit **Preview**.  
+- `Transform`: `One-hot encode`
+- `Invalid handling strategy` : `Keep`
+- `Output style`: `Columns`
+- `Max`: `1`  
+- `Input columns`:  `meal`, `is_repeated_guest`, `market_segment`, `assigned_room_type`, `deposit_type`, `customer_type`
+    
+
 
  ![scale-categorical](./img/categorical-one-hot.png)
 
-One hot encoding can be applied to the following 6 categorical columns. 
 
-`meal`, `is_repeated_guest`, `market_segment`, `assigned_room_type`, `deposit_type`, `customer_type`
+ If the Preview is OK, click **Add** to add the transform in the data flow. 
+
 
 ### Balancing the target variable 
 
@@ -146,17 +147,20 @@ DataWrangler also helps to balance the target variable (column) for class imbala
 
 In Data Wrangler, we can handle class imbalance using 3 different techniques.
 
-    Random Undersample
-    Random Oversample
-    SMOTE
+    - Random Undersample
+    - Random Oversample
+    - SMOTE
 
-From the Data Wrangler's transform pane, choose Balance data as the group and choose Random Oversample for the Transform field as shown in the picture below.
-
-`is_canceled` = 0 (negative case)
-`is_canceled` = 1 (positive case)
+From the Data Wrangler's transform pane, choose **Balance Data** as the transform. Please select the following parameters as shown in image below and hit **Preview**.  
+- `Target column`: `is_canceled`
+- `Desiered ratio` : `1`
+- `Transform`: `Random oversample`
 
  ![random-oversample](./img/random-oversample.png)
 
+
+ If the Preview is OK, click **Add** to add the transform in the data flow. 
+ 
 The state of the classes before and after balancing is as follows:
 
 The ratio of positive to negative case = ~0.38 
@@ -180,11 +184,11 @@ The below figure shows the results of the newly run Quick Model created using th
     required_car_parking_spaces
     booking_changes
 
-Craete a quick model, similar to one we created in the Data Exploration step. 
+Craete a quick model, similar to one we created in the Exploratory Data Analysis step. 
 
 ![post-quick-model](./img/quick-model-post.png)
 
-
+Compare the model with the one created in Exploratory Data Analysis step.  
 
 ### Next Steps
 

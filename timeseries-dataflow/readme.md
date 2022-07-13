@@ -25,11 +25,11 @@ To copy the dataset, copy and execute the Python code below within SageMaker Stu
 
 To create a SageMaker Studio notebook, from the launcher page, click on the Notebook Python 3 options under Notebooks and compute resources as show in the figure below. 
 
+Note - For this exercise please use us-east-1 as the region for your Data wrangler workbooks
+
 ![DWLauncher](./pictures/DWLauncher.png)
 
 Copy and paste the shared code snippet below into the launched notebook's cell (shown below) and execute it by clicking on the play icon on the top bar.
-
-Note - For this exercise please use us-east-1 as the region for your Data wrangler workbooks
 
 ![DWNotebook](./pictures/DWNotebook.png)
 

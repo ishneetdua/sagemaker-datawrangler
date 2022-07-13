@@ -16,7 +16,20 @@ We will use just 14 files: yellow cabs Jan-Dec 2019, Jan-Feb 2020 to avoid COVID
 
 Amazon SageMaker Data Wrangler could use diffrent sources, but we will need an S3 bucket to act as the source of your data. The code bellow will create a bucket with a unique `bucket_name`.
 
-We recommend to have a S3 bucket in the same region as the Amazon SageMaker Data Wrangler.
+We recommend to have a S3 bucket in the same region as the Amazon SageMaker Data Wrangler. 
+
+## Instructions to download the dataset
+You can use Amazon SageMaker Data Wrangler to import data from the following data sources: Amazon Simple Storage Service (Amazon S3), Amazon Athena, Amazon Redshift, and Snowflake. The dataset that you import can include up to 1000 columns. For this lab, we will be using Amazon S3 as the preferred data source. Before we import the dataset into Data Wrangler, let's ensure we copy the dataset first from the publicly hosted location to our local S3 bucket in our own account.
+
+To copy the dataset, copy and execute the Python code below within SageMaker Studio. It is recommended to execute this code in a notebook setting. We also recommend to have your S3 bucket in the same region as SageMaker Data Wrangler.
+
+To create a SageMaker Studio notebook, from the launcher page, click on the Notebook Python 3 options under Notebooks and compute resources as show in the figure below. 
+
+![DWLauncher](./pictures/DWLauncher.png)
+
+Copy and paste the shared code snippet below into the launched notebook's cell (shown below) and execute it by clicking on the play icon on the top bar.
+
+![DWNotebook](./pictures/DWNotebook.png)
 
 ```python
 import boto3

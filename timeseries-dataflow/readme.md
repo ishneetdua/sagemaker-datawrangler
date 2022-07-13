@@ -29,6 +29,8 @@ To create a SageMaker Studio notebook, from the launcher page, click on the Note
 
 Copy and paste the shared code snippet below into the launched notebook's cell (shown below) and execute it by clicking on the play icon on the top bar.
 
+Note - For this exercise please use us-east-1 as the region for your Data wrangler workbooks
+
 ![DWNotebook](./pictures/DWNotebook.png)
 
 ```python
@@ -148,7 +150,10 @@ Put a new name, for example: `TS-Workshop-DataPreparation.flow`
 
 In a few minutes DataWragler will finish to provision recources and you could see "Import Data" screen. 
 Data Wrangles support many data sources: Amazon S3, Amazon Athena, Amazon Redshift, Snowflake, Databricks.
-Our data already in S3, let's import it by clicking "Amazon S3" button. 
+Our data already in S3, let's import it by clicking "Amazon S3" button.
+
+Note - Please wait for the import button to be enabled
+
 ![SelectS3](./pictures/SelectS3.png)
 
 ```python

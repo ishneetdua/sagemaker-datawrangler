@@ -1,8 +1,8 @@
-![SageMaker](https://github.com/aws/amazon-sagemaker-examples/raw/main/_static/sagemaker-banner.png)
+![Amazon SageMaker Data Wrangler](https://github.com/aws/amazon-sagemaker-examples/raw/main/_static/sagemaker-banner.png)
 
-# Amazon SageMaker Data Examples
+# Amazon SageMaker Data Wrangler Examples
 
-Example Jupyter notebooks that demonstrate how to build, train, and deploy machine learning models using Amazon SageMaker.
+Example flows that demonstrate how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler.
 
 ## :books: Background
 

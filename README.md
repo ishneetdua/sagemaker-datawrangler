@@ -16,9 +16,9 @@ The [SageMaker example notebooks](https://sagemaker-examples.readthedocs.io/en/l
 
 Amazon SageMaker Data Wrangler is a feature in Amazon SageMaker Studio. Use this section to learn how to access and get started using Data Wrangler. Do the following:
 
-Complete each step in [Prerequisites](https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-getting-started.html#data-wrangler-getting-started-prerequisite).
+* Complete each step in [Prerequisites](https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-getting-started.html#data-wrangler-getting-started-prerequisite).
 
-Follow the procedure in (Access Data Wrangler)[https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-getting-started.html#data-wrangler-getting-started-access] to start using Data Wrangler.
+* Follow the procedure in (Access Data Wrangler)[https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-getting-started.html#data-wrangler-getting-started-access] to start using Data Wrangler.
 
 
 

@@ -31,11 +31,11 @@ Follow the procedure in (Access Data Wrangler)[https://docs.aws.amazon.com/sagem
 
 This example provide quick walkthroughs how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Tabular dataset.
 
-### Timeseries DataFlow
+### [Timeseries DataFlow](/timeseries-dataflow)
 
 This example provide quick walkthroughs how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Timeseries dataset.
 
-### Joined DataFlow
+### [Joined DataFlow](/joined-dataflow)
 
 This example provide quick walkthroughs how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Joined dataset.
 

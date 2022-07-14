@@ -21,8 +21,6 @@ Complete each step in [Prerequisites](https://docs.aws.amazon.com/sagemaker/late
 Follow the procedure in (Access Data Wrangler)[https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-getting-started.html#data-wrangler-getting-started-access] to start using Data Wrangler.
 
 
-## :computer: Usage
-
 
 
 ## :notebook: Examples

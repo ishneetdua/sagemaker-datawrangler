@@ -303,8 +303,7 @@ df = df.filter(F.col('Rating')==5).groupBy('userId').agg(*agg_obj)
     * Export as a Python script.
     * Export to SageMaker Feature Store as a notebook.
     
-Also, you can import the [flow file](./join.flow) by following the steps [here](/sagemaker-datawrangler
-/./import-flow.md)
+**NOTE** :bulb:  - Also, you can import the [flow file](./join.flow) by following the steps [here](././import-flow.md)
 
 So far, we have demonstrated how to use Amazon SageMaker Data Wrangler to preprocess the data and perform feature engineering to prepare for the train and test data set. After the data preparation step, data scientists can work on training a machine learning model using these datasets. In the next section, we will show you how to directly start a training job with the train data by leveraging Amazon SageMaker Autopilot from the SageMaker Data Wrangler data flow.
 

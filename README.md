@@ -27,15 +27,15 @@ Amazon SageMaker Data Wrangler is a feature in Amazon SageMaker Studio. Use this
 
 ### [Tabular DataFlow](/joined-dataflow)
 
-This example provide quick walkthroughs how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Tabular dataset.
+This example provide quick walkthrough of how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Tabular dataset.
 
 ### [Timeseries DataFlow](/timeseries-dataflow)
 
-This example provide quick walkthroughs how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Timeseries dataset.
+This example provide quick walkthrough of how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Timeseries dataset.
 
 ### [Joined DataFlow](/joined-dataflow)
 
-This example provide quick walkthroughs how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Joined dataset.
+This example provide quick walkthrough of how to aggregate and prepare data for Machine Learning using Amazon SageMaker Data Wrangler for Joined dataset.
 
 
 

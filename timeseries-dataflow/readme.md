@@ -651,6 +651,8 @@ Congratulations! At this stage you have designed a workflow and sucesfully launc
 You reached the end of this part. Now you know how to use Amazon SageMaker Data Wrangler for time series dataset preparation!
 </div>
 
+ :bulb:**NOTE**   - Also, you can import the [flow file](./timeseries.flow) by following the steps [here](../import-flow.md)
+
 You can now move to an optional advanced time series transformation exercise in the notebook [`TS-Workshop-Advanced.ipynb`](./TS-Workshop-Advanced.ipynb)
 
 

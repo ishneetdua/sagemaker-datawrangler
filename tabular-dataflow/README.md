@@ -122,3 +122,5 @@ After a certain time, the job will be complete. The image below shows the comple
  
  
  This exported data can now be used for running the ML Models
+ 
+ :bulb:**NOTE**   - Also, you can import the [flow file](./Hotel-Bookings-Classification.flow) by following the steps [here](../import-flow.md)

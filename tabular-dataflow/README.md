@@ -1,5 +1,5 @@
 # Hotel Booking Demand Example
-The example 
+
 
 
 ## Background
